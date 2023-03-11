@@ -1,0 +1,75 @@
+// Sample Input 1 :
+// 2
+// 6
+// 2 6 8 5 4 3
+// 4
+// 2 3 4 7 
+// 2
+// 10 10
+// 1
+// 10
+// Sample Output 1 :
+// 2 4 3
+// 10
+// Sample Input 2 :
+// 1
+// 4
+// 2 6 1 2
+// 5
+// 1 2 3 4 2
+// Sample Output 2 :
+// 2 1 2
+#include<iostream>
+using namespace std;
+void intersection(int *input1, int *input2, int size1, int size2)
+{
+    //Write your code here
+    int i,j;
+    for (i = 0; i < size1; i++) {
+
+      for (j = 0; j < size2; j++) {
+        if (input1[i] == input2[j]) {
+         cout << input1[i] << " ";
+         input2[j]=-1;
+        break;
+        }
+      }
+    }
+}
+// //or or or ror or ror or 
+// void intersection(int *arr1, int *arr2, int n, int m){
+// int i, j, c;
+//     for (i = 0; i < n; i++) {
+//       c = 0;
+//       for (j = 0; j < m; j++) {
+//         if (arr1[i] != arr2[j]){
+//           c++;
+//         }
+//       else{
+//         cout<< arr1[i];
+//          arr2[j]=-1;
+//         break;
+//       }
+//       }
+//     }
+//     cout<<endl;
+// }
+int main(){
+  int t;
+  cin>>t;
+  while(t--){
+    int n;
+    cin>>n;
+    int arr1[n];
+    for(int i=0; i<n;i++){
+      cin>>arr1[i];
+    }
+    int m;
+    cin>>m;
+    int arr2[m];
+    for(int j=0;j<m;j++){
+      cin>>arr2[j];
+    }
+   intersection(arr1, arr2,  n, m);
+  }
+}
